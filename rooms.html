@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Room Management</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+    <!-- Loading screen -->
+    <div id="loader"
+        style="position:fixed; top:0; left:0; width:100%; height:100%; background:#ffeecb; display:flex; flex-direction:column; align-items:center; justify-content:center; z-index:9999;">
+        <h1 class="loading_h1" style="color: #913131;">𝐻𝒪𝒯𝐸𝐿 𝒴𝒰𝒦𝒜𝑅𝐼</h1>
+        <div class="progress-container" style="width:80%; height:4px; background:#444;">
+            <div class="progress-bar" id="progressBar" style="height:100%; width:0%; background:#913131;"></div>
+        </div>
+        <div class="progress-text" id="progressText" style="margin-top:10px; color:#913131;">0%</div>
+    </div>
+
+    <div class="sidebar" id="sidebar">
+        <h2>𝐻𝒪𝒯𝐸𝐿 𝒴𝒰𝒦𝒜𝑅𝐼</h2>
+        <ul>
+            <li><a href="index.html">Dashboard</a></li>
+            <li><a href="rooms.html">Room Management</a></li>
+            <li><a href="room_services.html">Room Services</a></li>
+            <li><a href="food.html">Food Orders</a></li>
+            <li><a href="tv.html">TV Channels</a></li>
+            <li><a href="laundry.html">Laundry Services</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <header class="room_header">
+            <h1>Room Management</h1>
+            <a href="#" class="add_room_service_btn">Add Room Services</a>
+        </header>
+
+        <div class="room_cards">
+            <div class="room_card">
+                <h3>Room 101</h3>
+                <p>Name: <span style="color: #ffeecb;">Ko Ko</span></p>
+                <p>Status: <span style="color: #ffeecb;">Occupied</span></p>
+                <button class="btn" style="background-color: aquamarine; color: black; font-weight: 700;">Request
+                    Cleaning</button>
+                <button class="btn" style="background-color: rgb(253, 4, 4); color: black; font-weight: 700;">Request
+                    Repairing</button>
+                <button class="btn" style="background-color: blue; color: aliceblue;">Request Towel</button>
+            </div>
+            <div class="room_card">
+                <h3>Room 102</h3>
+                <p>Status: <span style="color: #ffeecb;">Available</span></p>
+                <button class="btn">Assign Guest</button>
+            </div>
+            <div class="room_card">
+                <h3>Room 103</h3>
+                <p>Name: <span style="color: #ffeecb;">Mg Mg</span></p>
+                <p>Status: <span style="color: #ffeecb;">Occupied</span></p>
+                <button class="btn" style="background-color: aquamarine; color: black; font-weight: 700;">Request
+                    Cleaning</button>
+                <button class="btn" style="background-color: blue; color: aliceblue;">Request Towel</button>
+            </div>
+            <div class="room_card">
+                <h3>Room 104</h3>
+                <p>Status: <span style="color: #ffeecb;">Available</span></p>
+                <button class="btn">Assign Guest</button>
+            </div>
+            <div class="room_card">
+                <h3>Room 105</h3>
+                <p>Name: <span style="color: #ffeecb;">Kyaw Kyaw</span></p>
+                <p>Status: <span style="color: #ffeecb;">Occupied</span></p>
+                <button class="btn" style="background-color: aquamarine; color: black; font-weight: 700;">Request
+                    Cleaning</button>
+            </div>
+            <div class="room_card">
+                <h3>Room 106</h3>
+                <p>Status: <span style="color: #ffeecb;">Available</span></p>
+                <button class="btn">Assign Guest</button>
+            </div>
+            <div class="room_card">
+                <h3>Room 107</h3>
+                <p>Name: <span style="color: #ffeecb;">Aung Aung</span></p>
+                <p>Status: <span style="color: #ffeecb;">Occupied</span></p>
+                <button class="btn">Request Cleaning</button>
+            </div>
+            <div class="room_card">
+                <h3>Room 108</h3>
+                <p>Status: <span style="color: #ffeecb;">Available</span></p>
+                <button class="btn">Assign Guest</button>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/loading.js"></script>
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('active');
+        }
+    </script>
+</body>
+
+</html>

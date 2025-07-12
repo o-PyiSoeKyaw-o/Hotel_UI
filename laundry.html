@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Laundry Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+    <!-- Loading -->
+    <div id="loader"
+        style="position:fixed; top:0; left:0; width:100%; height:100%; background:#ffeecb; display:flex; flex-direction:column; align-items:center; justify-content:center; z-index:9999;">
+        <h1 class="loading_h1" style="color: #913131;">𝐻𝒪𝒯𝐸𝐿 𝒴𝒰𝒦𝒜𝑅𝐼</h1>
+        <div class="progress-container" style="width:80%; height:4px; background:#444;">
+            <div class="progress-bar" id="progressBar" style="height:100%; width:0%; background:#913131;"></div>
+        </div>
+        <div class="progress-text" id="progressText" style="margin-top:10px; color:#913131;">0%</div>
+    </div>
+
+    <div class="navbar">
+        <h2>𝐻𝒪𝒯𝐸𝐿 𝒴𝒰𝒦𝒜𝑅𝐼</h2>
+        <div class="hamburger" onclick="toggleSidebar()">
+            ☰
+        </div>
+    </div>
+    <div class="sidebar" id="sidebar">
+        <h2>𝐻𝒪𝒯𝐸𝐿 𝒴𝒰𝒦𝒜𝑅𝐼</h2>
+        <ul>
+            <li><a href="index.html">Dashboard</a></li>
+            <li><a href="rooms.html">Room Management</a></li>
+            <li><a href="room_services.html">Room Services</a></li>
+            <li><a href="food.html">Food Orders</a></li>
+            <li><a href="tv.html">TV Channels</a></li>
+            <li><a href="laundry.html">Laundry Services</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <header>
+            <h1>Laundry Services</h1>
+        </header>
+
+        <div class="laundry_cards">
+            <div class="laundry_card">
+                <h3>Standard Wash</h3>
+                <p>5000 MMK per kg</p>
+                <button class="btn">Request</button>
+            </div>
+            <div class="laundry_card">
+                <h3>Express Wash</h3>
+                <p>8000 MMK per kg</p>
+                <button class="btn">Request</button>
+            </div>
+            <div class="laundry_card">
+                <h3>Dry Cleaning</h3>
+                <p>12000 MMK per item</p>
+                <button class="btn">Request</button>
+            </div>
+            <div class="laundry_card">
+                <h3>Iron Only</h3>
+                <p>2000 MMK per item</p>
+                <button class="btn">Request</button>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/loading.js"></script>
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('active');
+        }
+    </script>
+</body>
+
+</html>

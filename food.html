@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Food Orders</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+  <!-- Loading -->
+  <div id="loader"
+    style="position:fixed; top:0; left:0; width:100%; height:100%; background:#ffeecb; display:flex; flex-direction:column; align-items:center; justify-content:center; z-index:9999;">
+    <h1 class="loading_h1" style="color: #913131;">𝐻𝒪𝒯𝐸𝐿 𝒴𝒰𝒦𝒜𝑅𝐼</h1>
+    <div class="progress-container" style="width:80%; height:4px; background:#444;">
+      <div class="progress-bar" id="progressBar" style="height:100%; width:0%; background:#913131;"></div>
+    </div>
+    <div class="progress-text" id="progressText" style="margin-top:10px; color:#913131;">0%</div>
+  </div>
+
+  <div class="navbar">
+    <h2>𝐻𝒪𝒯𝐸𝐿 𝒴𝒰𝒦𝒜𝑅𝐼</h2>
+    <div class="hamburger" onclick="toggleSidebar()">
+      ☰
+    </div>
+  </div>
+  <div class="sidebar" id="sidebar">
+    <h2>𝐻𝒪𝒯𝐸𝐿 𝒴𝒰𝒦𝒜𝑅𝐼</h2>
+    <ul>
+      <li><a href="index.html">Dashboard</a></li>
+      <li><a href="rooms.html">Room Management</a></li>
+      <li><a href="room_services.html">Room Services</a></li>
+      <li><a href="food.html">Food Orders</a></li>
+      <li><a href="tv.html">TV Channels</a></li>
+      <li><a href="laundry.html">Laundry Services</a></li>
+    </ul>
+  </div>
+  <div class="main-content">
+    <header>
+      <h1>Food Orders</h1>
+    </header>
+
+    <!-- Food-Categories -->
+    <div class="categories">
+      <button class="category_btn">All</button>
+      <button class="category_btn">Breakfast</button>
+      <button class="category_btn">Lunch</button>
+      <button class="category_btn">Dinner</button>
+      <button class="category_btn">Dessert</button>
+      <button class="category_btn">Drinks</button>
+    </div>
+
+    <div class="food_cards">
+      <div class="food_card">
+        <img src="" alt="">
+        <h3></h3>
+        <p></p>
+        <button class="food_btn">Order</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ====== Static Data ======
+    const menuData = {
+      All: [
+        { name: 'Grilled Chicken', price: '20000 MMK', image: 'assets/img/foods/grilled_chicken.jpg' },
+        { name: 'Club Sandwich', price: '8000 MMK', image: 'assets/img/foods/club_sandwich.jpg', },
+        { name: 'Caesar Salad', price: '12000 MMK', image: 'assets/img/foods/caesar_salad.jpg' },
+        { name: 'Beef Steak', price: '30000 MMK', image: 'assets/img/foods/beef_steak.jpg' },
+        { name: 'Veggie Pizza', price: '22000 MMK', image: 'assets/img/foods/veggie_pizza.jpg' },
+        { name: 'Pasta Alfredo', price: '18000 MMK', image: 'assets/img/foods/pasta_alfredo.jpg' },
+      ],
+      Breakfast: [
+        { name: 'Pancakes', price: '$5.50', image: 'assets/img/foods/pancakes.jpg' },
+        { name: 'Omelette', price: '$4.00', image: 'assets/img/foods/omelette.jpg' },
+        { name: 'French Toast', price: '$6.00', image: 'assets/img/foods/french_toast.jpg' },
+        { name: 'Bacon and Eggs', price: '$7.00', image: 'assets/img/foods/bacon_eggs.jpg' },
+        { name: 'Fruit Salad', price: '$3.50', image: 'assets/img/foods/fruit_salad.jpg' },
+        { name: 'Coffee', price: '$2.00', image: 'assets/img/foods/coffee.jpg' }
+      ],
+      Lunch: [
+        { name: 'Club Sandwich', price: '$8.50', image: 'assets/img/foods/club_sandwich.jpg' },
+        { name: 'Chicken Caesar Salad', price: '$7.25', image: 'assets/img/foods/chicken_caesar_salad.jpg' },
+        { name: 'Veggie Pizza', price: '$11.00', image: 'assets/img/foods/veggie_pizza.jpg' },
+        { name: 'Chicken Wrap', price: '$9.50', image: 'assets/img/foods/chicken_wrap.jpg' },
+        { name: 'Fish and Chips', price: '$10.00', image: 'assets/img/foods/fish_chips.jpg' }
+      ],
+      Dinner: [
+        { name: 'Grilled Chicken', price: '$12.99', image: 'assets/img/foods/grilled_chicken.jpg' },
+        { name: 'Beef Steak', price: '$15.75', image: 'assets/img/foods/beef_steak.jpg' },
+        { name: 'Pasta Alfredo', price: '$9.80', image: 'assets/img/foods/pasta_alfredo.jpg' },
+        { name: 'Vegetable Stir Fry', price: '$8.00', image: 'assets/img/foods/vegetable_stir_fry.jpg' },
+        { name: 'Shrimp Scampi', price: '$14.50', image: 'assets/img/foods/shrimp_scampi.jpg' }
+      ],
+      Dessert: [
+        { name: 'Cheesecake', price: '$5.00', image: 'assets/img/foods/cheesecake.jpg' },
+        { name: 'Ice Cream', price: '$3.50', image: 'assets/img/foods/ice_cream.jpg' },
+        { name: 'Chocolate Cake', price: '$4.50', image: 'assets/img/foods/chocolate_cake.jpg' },
+        { name: 'Fruit Tart', price: '$6.00', image: 'assets/img/foods/fruit_tart.jpg' },
+        { name: 'Brownie', price: '$2.50', image: 'assets/img/foods/brownie.jpg' }
+      ],
+      Drinks: [
+        { name: 'Orange Juice', price: '$2.50', image: 'assets/img/foods/orange_juice.jpg' },
+        { name: 'Coffee', price: '$2.00', image: 'assets/img/foods/coffee.jpg' },
+        { name: 'Tea', price: '$1.50', image: 'assets/img/foods/tea.jpg' },
+        { name: 'Water', price: '$0.00', image: 'assets/img/foods/water.jpg' },
+      ]
+    };
+
+    // ====== Render Function ======
+    function renderMenu(category) {
+      const container = document.querySelector('.food_cards');
+      container.innerHTML = '';
+      menuData[category].forEach(item => {
+        const card = document.createElement('div');
+        card.className = 'food_card';
+        card.innerHTML = `
+                      <img src="${item.image}" alt="${item.name}">
+                      <h3>${item.name}</h3>
+                      <p>${item.price}</p>
+                      <button class="btn">Order</button>`;
+        container.appendChild(card);
+      });
+    }
+
+    // ====== Category Buttons ======
+    const buttons = document.querySelectorAll('.category_btn');
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const category = btn.textContent;
+        renderMenu(category);
+      });
+    });
+
+    // ====== Init with All ======
+    renderMenu('All');
+
+  </script>
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      sidebar.classList.toggle('active');
+    }
+  </script>
+  <script src="assets/js/loading.js"></script>
+</body>
+
+</html>
