@@ -120,6 +120,7 @@ header h1 {
   color: #ffeecb;
 }
 
+
 /* Rooms */
 .room_header {
   display: flex;
@@ -455,6 +456,7 @@ header h1 {
     height: 100%;
     width: 220px;
     transform: translateX(0);
+    transition: right 0.3s ease;
     z-index: 999;
   }
 
