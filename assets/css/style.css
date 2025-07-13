@@ -425,6 +425,107 @@ header h1 {
   transform: translateY(-2px);
 }
 
+/* Add Rooms */
+.add_room{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.add_room_form h3{
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #ffeecb;
+  margin-bottom: 10px;
+}
+
+.add_room_form{
+  max-width: 500px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-style: solid;
+  border-radius: 8px;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 30px;
+  background-color: #913131;
+}
+
+.add_room_form label{
+  font-weight: 700;
+  color:#d4b669;
+}
+
+.add_room_form input,
+.add_room_form select{
+  height: 50px;
+  padding-left: 10px;
+  border-radius: 8px;
+  background-color: #ffeecb;
+}
+
+.add_new_room_btn{
+  height: 50px;
+  border-radius: 8px;
+  background-color: #d4b669;
+  color: #913131;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-top: 15px;
+}
+
+/* Add Room Service */
+.add_room_service{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.add_room_service_form{
+  max-width: 500px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-style: solid;
+  border-radius: 8px;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 30px;
+  background-color: #913131;
+}
+
+.add_room_service_form h3{
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #ffeecb;
+  margin-bottom: 10px;
+}
+
+.add_room_service_form label{
+  font-weight: 700;
+  color:#d4b669;
+}
+
+.add_room_service_form input,
+.add_room_service_form textarea{
+  height: 50px;
+  padding-left: 10px;
+  border-radius: 8px;
+  background-color: #ffeecb;
+}
+
+.add_new_room_service_btn{
+  height: 50px;
+  border-radius: 8px;
+  background-color: #d4b669;
+  color: #913131;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-top: 15px;
+}
 
 @media (max-width: 850px) {
   .navbar {
